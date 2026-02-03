@@ -1,0 +1,1708 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lauren Grant | Technical Program Manager</title>
+    
+    <!-- Open Graph / LinkedIn Preview Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lgran731.pages.dev/">
+    <meta property="og:title" content="Lauren Grant | Technical Program Manager">
+    <meta property="og:description" content="Technical Program Manager building ML and analytics platforms from scratch. Led four 0→1 platform deliveries in 2 years across real-time computer vision, workload analytics, voice AI, and multi-modal data systems. What makes those efforts succeed isn't just the technical work, but earning trust—leadership acting on recommendations, teams following guidance, and decisions that hold because the technical depth is there.">
+    <meta property="og:image" content="https://lgran731.pages.dev/preview.png">
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Lauren Grant | Technical Program Manager">
+    <meta name="twitter:description" content="Technical Program Manager building ML and analytics platforms from scratch. Led four 0→1 platform deliveries in 2 years across real-time computer vision, workload analytics, voice AI, and multi-modal data systems. What makes those efforts succeed isn't just the technical work, but earning trust—leadership acting on recommendations, teams following guidance, and decisions that hold because the technical depth is there.">
+    <meta name="twitter:image" content="https://lgran731.pages.dev/preview.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-bg: #0a0e15;
+            --color-surface: #141922;
+            --color-surface-elevated: #1d2430;
+            --color-primary: #00d9ff;
+            --color-primary-muted: #006b7d;
+            --color-accent: #ff6b35;
+            --color-text: #e8edf3;
+            --color-text-dim: #8b95a8;
+            --color-border: #2a3447;
+            --font-display: 'IBM Plex Mono', monospace;
+            --font-body: 'Space Grotesk', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background Grid */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(var(--color-border) 1px, transparent 1px),
+                linear-gradient(90deg, var(--color-border) 1px, transparent 1px);
+            background-size: 40px 40px;
+            opacity: 0.3;
+            z-index: -1;
+            animation: gridScroll 20s linear infinite;
+        }
+
+        @keyframes gridScroll {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(40px, 40px); }
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 14, 21, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--color-border);
+            z-index: 1000;
+            padding: 1.5rem 2rem;
+        }
+
+        nav .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--color-primary);
+            text-decoration: none;
+            letter-spacing: 0.05em;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--color-text-dim);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+            font-weight: 400;
+        }
+
+        nav a:hover {
+            color: var(--color-primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+        }
+
+        .hero .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .hero-label {
+            font-family: var(--font-display);
+            font-size: 0.85rem;
+            color: var(--color-primary);
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s forwards 0.2s;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--color-text) 0%, var(--color-primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            opacity: 0;
+            animation: fadeInUp 0.8s forwards 0.4s;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--color-text-dim);
+            margin-bottom: 2rem;
+            max-width: 700px;
+            opacity: 0;
+            animation: fadeInUp 0.8s forwards 0.6s;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 3rem;
+            margin-top: 3rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s forwards 0.8s;
+        }
+
+        .stat {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .stat-number {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: var(--color-primary);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--color-text-dim);
+            margin-top: 0.5rem;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Section Styles */
+        section {
+            padding: 6rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            margin-bottom: 4rem;
+        }
+
+        .section-label {
+            font-family: var(--font-display);
+            font-size: 0.85rem;
+            color: var(--color-accent);
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--color-text-dim);
+            max-width: 700px;
+        }
+
+        /* Platform Cards */
+        .platforms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 2rem;
+        }
+
+        .platform-card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .platform-card:hover {
+            border-color: var(--color-primary);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 217, 255, 0.1);
+        }
+
+        .platform-header {
+            padding: 2rem;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .platform-tag {
+            font-family: var(--font-display);
+            font-size: 0.75rem;
+            color: var(--color-primary);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .platform-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .platform-subtitle {
+            font-size: 0.95rem;
+            color: var(--color-text-dim);
+        }
+
+        .platform-body {
+            padding: 2rem;
+        }
+
+        .platform-metrics {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .metric {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .metric-value {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--color-primary);
+        }
+
+        .metric-label {
+            font-size: 0.85rem;
+            color: var(--color-text-dim);
+            margin-top: 0.25rem;
+        }
+
+        .platform-description {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: var(--color-text-dim);
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tech-tag {
+            font-family: var(--font-display);
+            font-size: 0.75rem;
+            padding: 0.4rem 0.8rem;
+            background: var(--color-surface-elevated);
+            border: 1px solid var(--color-border);
+            border-radius: 4px;
+            color: var(--color-text);
+        }
+
+        .platform-cta {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--color-border);
+            font-family: var(--font-display);
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--color-text-dim);
+            text-align: right;
+            transition: all 0.3s;
+        }
+
+        .platform-card:hover .platform-cta {
+            color: var(--color-primary);
+            transform: translateX(4px);
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: var(--color-text-dim);
+            line-height: 1.8;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, var(--color-primary) 0%, var(--color-accent) 100%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.45rem;
+            top: 0.3rem;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--color-primary);
+            border: 3px solid var(--color-bg);
+        }
+
+        .timeline-year {
+            font-family: var(--font-display);
+            font-size: 0.85rem;
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-role {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-company {
+            font-size: 0.9rem;
+            color: var(--color-text-dim);
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        .skill-category h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            color: var(--color-primary);
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .skill-item {
+            font-size: 0.9rem;
+            color: var(--color-text-dim);
+            padding: 0.5rem 1rem;
+            background: var(--color-surface-elevated);
+            border-radius: 6px;
+        }
+
+        /* Contact Section */
+        .contact-content {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .contact-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-content p {
+            font-size: 1.1rem;
+            color: var(--color-text-dim);
+            margin-bottom: 2.5rem;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .contact-btn {
+            padding: 1rem 2rem;
+            background: var(--color-primary);
+            color: var(--color-bg);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 1rem;
+        }
+
+        .contact-btn:hover {
+            background: var(--color-text);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 217, 255, 0.3);
+        }
+
+        .contact-btn.secondary {
+            background: transparent;
+            border: 2px solid var(--color-primary);
+            color: var(--color-primary);
+        }
+
+        .contact-btn.secondary:hover {
+            background: var(--color-primary);
+            color: var(--color-bg);
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid var(--color-border);
+            color: var(--color-text-dim);
+            font-size: 0.9rem;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 14, 21, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 2000;
+            overflow-y: auto;
+            animation: fadeIn 0.3s;
+        }
+
+        .modal.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 2rem;
+            position: relative;
+            animation: slideUp 0.4s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-close {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1.5rem;
+            color: var(--color-text);
+            z-index: 2001;
+        }
+
+        .modal-close:hover {
+            background: var(--color-primary);
+            color: var(--color-bg);
+            transform: rotate(90deg);
+        }
+
+        .modal-header {
+            margin-bottom: 3rem;
+        }
+
+        .modal-tag {
+            font-family: var(--font-display);
+            font-size: 0.85rem;
+            color: var(--color-primary);
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .modal-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .modal-subtitle {
+            font-size: 1.2rem;
+            color: var(--color-text-dim);
+            max-width: 800px;
+        }
+
+        .modal-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+            padding: 2rem;
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+        }
+
+        .modal-stat {
+            text-align: center;
+        }
+
+        .modal-stat-value {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-stat-label {
+            font-size: 0.85rem;
+            color: var(--color-text-dim);
+        }
+
+        .modal-section {
+            margin: 3rem 0;
+        }
+
+        .modal-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--color-accent);
+        }
+
+        .modal-section p {
+            color: var(--color-text-dim);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .modal-section ul {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .modal-section li {
+            color: var(--color-text-dim);
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--color-border);
+            line-height: 1.7;
+        }
+
+        .modal-section li:before {
+            content: '▸';
+            color: var(--color-primary);
+            margin-right: 1rem;
+            font-weight: bold;
+        }
+
+        .modal-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .highlight-box {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+
+        .highlight-box h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            color: var(--color-primary);
+        }
+
+        .highlight-box p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Recognition Section */
+        #recognition {
+            padding: 6rem 2rem;
+            background: var(--color-bg);
+        }
+
+        .recognition-grid {
+            max-width: 1400px;
+            margin: 3rem auto 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .recognition-item {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .recognition-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--color-primary);
+        }
+
+        .recognition-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .recognition-item h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--color-primary);
+        }
+
+        .recognition-item p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--color-text-dim);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+
+            .platforms-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .platform-metrics {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-content {
+                margin: 2rem 1rem;
+                padding: 1rem;
+            }
+
+            .modal-close {
+                top: 1rem;
+                right: 1rem;
+            }
+
+            .modal-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .modal-highlights {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Prevent body scroll when modal is open */
+        body.modal-open {
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="#" class="logo">&lt;LAUREN_GRANT /&gt;</a>
+            <ul>
+                <li><a href="#recognition">Recognition</a></li>
+                <li><a href="#platforms">Platforms</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-label">Technical Program Manager • Detroit, MI</div>
+                <h1>Building ML Platforms That Scale</h1>
+                <p>I'm a Technical Program Manager who builds ML and analytics platforms from scratch. Over the past two years, I've led four 0→1 platform deliveries across real-time computer vision, workload analytics, voice AI, and multi-modal data systems. What makes those efforts succeed isn't just the technical work, but earning trust: leadership acting on your recommendations, teams following your guidance, and decisions that hold because the technical depth is there. The end result? Turning ambiguous requirements into reliable, production-grade systems.</p>
+                
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-number">4</div>
+                        <div class="stat-label">Production Platforms Built</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">~$18M</div>
+                        <div class="stat-label">Contract Influence</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">2</div>
+                        <div class="stat-label">Years (All 4 Platforms)</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">30%</div>
+                        <div class="stat-label">Cycle Time Reduction</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recognition Section -->
+    <section id="recognition">
+        <div class="section-header">
+            <div class="section-label">Recognition</div>
+            <h2 class="section-title">Awards & Business Impact</h2>
+        </div>
+        
+        <div class="recognition-grid">
+            <div class="recognition-item">
+                <div class="recognition-icon">💰</div>
+                <h3>CEO Recognition: Equity Incentive Award</h3>
+                <p>Granted Restricted Stock Units with 5-year vesting for primary technical authorship on advanced analytics subfactor (~$18M value, 25% of total) of winning $70.7M government contract. Technical vision distinguished the winning proposal and caught CEO attention as one of few individual equity recognitions company-wide.</p>
+            </div>
+            
+            <div class="recognition-item">
+                <div class="recognition-icon">🚀</div>
+                <h3>Rapid Promotion (11 Months)</h3>
+                <p>Promoted from Systems Engineer to Technical Program Manager (Feb 2024) after successfully launching laboratory that had failed twice previously, demonstrating both execution excellence and strategic technical vision.</p>
+            </div>
+            
+            <div class="recognition-item">
+                <div class="recognition-icon">🏆</div>
+                <h3>4 Performance-Based Bonuses</h3>
+                <p>Recognized for proposal authorship, advanced analysis development, technical presentations, and laboratory deployment excellence within first 2 years.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Platforms Section -->
+    <section id="platforms">
+        <div class="section-header">
+            <div class="section-label">Platform Portfolio</div>
+            <h2 class="section-title">Production Systems Built from 0→1</h2>
+            <p class="section-subtitle">Four production ML and analytics platforms delivered in 2 years ($4M combined budget), reducing development cycle time 30% and establishing reusable architecture across organizations.</p>
+        </div>
+
+        <div class="platforms-grid">
+            <!-- Platform 1: Real-Time Analytics -->
+            <div class="platform-card" data-modal="modal-analytics">
+                <div class="platform-header">
+                    <div class="platform-tag">0→1 Platform Build</div>
+                    <h3 class="platform-title">Real-Time Multi-Modal Analytics Platform</h3>
+                    <p class="platform-subtitle">Kafka-based infrastructure supporting live performance monitoring</p>
+                </div>
+                <div class="platform-body">
+                    <div class="platform-metrics">
+                        <div class="metric">
+                            <div class="metric-value">7</div>
+                            <div class="metric-label">Concurrent Pipelines</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">~40</div>
+                            <div class="metric-label">Kafka Topics</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">4</div>
+                            <div class="metric-label">Evaluation Events</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">3</div>
+                            <div class="metric-label">Organizations Aligned</div>
+                        </div>
+                    </div>
+                    <p class="platform-description">
+                        Launched systems integration laboratory after two prior failed attempts, establishing validation workflows and integration standards. Resolved critical 3-org architectural conflict through cross-functional stakeholder alignment, unblocking deployment and enabling four evaluation events. Platform now mandated as reusable architecture standard.
+                    </p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Apache Kafka</span>
+                        <span class="tech-tag">Real-Time Processing</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">Data Architecture</span>
+                        <span class="tech-tag">Multi-Modal Data</span>
+                    </div>
+                    <div class="platform-cta">View Details →</div>
+                </div>
+            </div>
+
+            <!-- Platform 2: ML Inference -->
+            <div class="platform-card" data-modal="modal-ml">
+                <div class="platform-header">
+                    <div class="platform-tag">ML Productization</div>
+                    <h3 class="platform-title">ML Inference & Tracking Platform</h3>
+                    <p class="platform-subtitle">Computer vision platform for real-time object detection and tracking</p>
+                </div>
+                <div class="platform-body">
+                    <div class="platform-metrics">
+                        <div class="metric">
+                            <div class="metric-value">18</div>
+                            <div class="metric-label">Camera Streams</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">40 FPS</div>
+                            <div class="metric-label">Processing Speed</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">75%</div>
+                            <div class="metric-label">Detection Accuracy</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">2×</div>
+                            <div class="metric-label">Throughput Increase</div>
+                        </div>
+                    </div>
+                    <p class="platform-description">
+                        Scaled platform from failed prototype to production MVP supporting 18 concurrent camera streams. Drove Python→C++ migration and FP32→FP16 optimization, improving model accuracy from 30% to 75% and doubling throughput. Platform now core dependency for all third-party model evaluations.
+                    </p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">YOLO</span>
+                        <span class="tech-tag">OpenCV</span>
+                        <span class="tech-tag">C++</span>
+                        <span class="tech-tag">Multi-GPU</span>
+                        <span class="tech-tag">Client-Server Architecture</span>
+                    </div>
+                    <div class="platform-cta">View Details →</div>
+                </div>
+            </div>
+
+            <!-- Platform 3: Voice AI -->
+            <div class="platform-card" data-modal="modal-voice">
+                <div class="platform-header">
+                    <div class="platform-tag">AI Product</div>
+                    <h3 class="platform-title">Voice-Based AI Assistant Platform</h3>
+                    <p class="platform-subtitle">Multi-phase AI platform from transcription to voice command execution</p>
+                </div>
+                <div class="platform-body">
+                    <div class="platform-metrics">
+                        <div class="metric">
+                            <div class="metric-value">&lt;300ms</div>
+                            <div class="metric-label">Command Latency</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">75%+</div>
+                            <div class="metric-label">Speech Accuracy</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">21</div>
+                            <div class="metric-label">Users Validated</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">4</div>
+                            <div class="metric-label">Audio Streams</div>
+                        </div>
+                    </div>
+                    <p class="platform-description">
+                        Owned platform roadmap across transcription, command, and assistant phases. Established <300ms command latency and 75%+ accuracy delivery gates, validated with 21 users across 4 concurrent audio streams. Terminated misaligned vendor following technical and delivery assessment to protect platform integrity.
+                    </p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">NLP</span>
+                        <span class="tech-tag">Speech-to-Text</span>
+                        <span class="tech-tag">Real-Time Audio</span>
+                        <span class="tech-tag">Multi-Agent AI</span>
+                        <span class="tech-tag">Python</span>
+                    </div>
+                    <div class="platform-cta">View Details →</div>
+                </div>
+            </div>
+
+            <!-- Platform 4: Workload Analytics -->
+            <div class="platform-card" data-modal="modal-workload">
+                <div class="platform-header">
+                    <div class="platform-tag">Signal Processing + ML</div>
+                    <h3 class="platform-title">Workload Analytics Platform</h3>
+                    <p class="platform-subtitle">Real-time physiological monitoring through custom signal processing</p>
+                </div>
+                <div class="platform-body">
+                    <div class="platform-metrics">
+                        <div class="metric">
+                            <div class="metric-value">Real-Time</div>
+                            <div class="metric-label">ML Inference</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">4</div>
+                            <div class="metric-label">Evaluation Events</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">4</div>
+                            <div class="metric-label">Active Partnerships</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">Python→C#</div>
+                            <div class="metric-label">Migration</div>
+                        </div>
+                    </div>
+                    <p class="platform-description">
+                        Built platform from raw biosignals to real-time ML inference, replacing unreliable commercial solutions. Migrated Python→C# for production deployment. Platform enabled 4 active research partnerships with academic and industry organizations and objective technology evaluation framework.
+                    </p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">C#</span>
+                        <span class="tech-tag">Signal Processing</span>
+                        <span class="tech-tag">ML Inference</span>
+                        <span class="tech-tag">ECG Analysis</span>
+                        <span class="tech-tag">Real-Time Systems</span>
+                    </div>
+                    <div class="platform-cta">View Details →</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="section-header">
+            <div class="section-label">Expertise</div>
+            <h2 class="section-title">Technical & Program Management Skills</h2>
+        </div>
+
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>Platform Development</h3>
+                <div class="skill-list">
+                    <span class="skill-item">0→1 Platform Building</span>
+                    <span class="skill-item">Real-Time Systems</span>
+                    <span class="skill-item">Data Architecture</span>
+                    <span class="skill-item">Client-Server Design</span>
+                    <span class="skill-item">Performance Optimization</span>
+                    <span class="skill-item">Multi-GPU Systems</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>ML & AI</h3>
+                <div class="skill-list">
+                    <span class="skill-item">ML Productization</span>
+                    <span class="skill-item">Computer Vision (YOLO)</span>
+                    <span class="skill-item">NLP / Speech Recognition</span>
+                    <span class="skill-item">Model Optimization</span>
+                    <span class="skill-item">Real-Time Inference</span>
+                    <span class="skill-item">Multi-Agent AI</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Technical Stack</h3>
+                <div class="skill-list">
+                    <span class="skill-item">Python</span>
+                    <span class="skill-item">C++</span>
+                    <span class="skill-item">C#</span>
+                    <span class="skill-item">JavaScript</span>
+                    <span class="skill-item">Apache Kafka</span>
+                    <span class="skill-item">PostgreSQL</span>
+                    <span class="skill-item">AWS</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Program Management</h3>
+                <div class="skill-list">
+                    <span class="skill-item">Agile / Scrum</span>
+                    <span class="skill-item">Technical Roadmapping</span>
+                    <span class="skill-item">Stakeholder Alignment</span>
+                    <span class="skill-item">Risk Mitigation</span>
+                    <span class="skill-item">Budget Management</span>
+                    <span class="skill-item">Vendor Management</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Data & Analytics</h3>
+                <div class="skill-list">
+                    <span class="skill-item">Statistical Modeling</span>
+                    <span class="skill-item">Bayesian Inference</span>
+                    <span class="skill-item">Signal Processing</span>
+                    <span class="skill-item">ETL Pipelines</span>
+                    <span class="skill-item">Data Visualization</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Education</h3>
+                <div class="skill-list">
+                    <span class="skill-item">PhD, Cognitive Neuroscience — University of Michigan, 2021</span>
+                    <span class="skill-item">MS, Cognitive Neuroscience — University of Michigan, 2017</span>
+                    <span class="skill-item">BS, Psychology — University of Louisville, 2015</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Certifications</h3>
+                <div class="skill-list">
+                    <span class="skill-item">Secret Security Clearance (Active)</span>
+                    <span class="skill-item">PMP (PMI, Jan 2026)</span>
+                    <span class="skill-item">CSM (Scrum Alliance, Nov 2025)</span>
+                    <span class="skill-item">AWS Solutions Architect — In Progress (Expected May 2026)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="section-header">
+            <div class="section-label">Background</div>
+            <h2 class="section-title">From Research to Production Systems</h2>
+        </div>
+
+        <div class="about-content">
+            <div class="about-text">
+                <p>I spent six years getting a PhD in cognitive neuroscience, and honestly, I loved it - the questions, the experiments, the iterations. What I didn't expect was how much that mindset would carry over into everything I do now. Software development still feels like science to me: form a hypothesis, test it, see what breaks, adjust. The setting changed, but the approach didn't.</p>
+                
+                <p>These days I'm a Technical Program Manager building ML and analytics platforms from scratch. Over the past two years I've led four 0→1 platform builds (real-time ML inference, workload analytics, voice AI, and multi-modal data systems). Each one had a budget around $1M and a cross-functional team of 10-14 engineers. What made them work wasn't just technical chops, it was earning trust early and keeping it.</p>
+                
+                <p>When I joined as a Systems Engineer in March 2023, leadership asked me to diagnose a workload program that had been struggling for years. Three months in, I came back with recommendations that weren't easy. Transition long-standing partnerships, build internal capability instead. They trusted my assessment and acted on it. By October, those partnerships had concluded. By February 2024, I had been promoted to Technical Program Manager, partly for that work, partly for helping launch a laboratory that had failed twice before, and partly for writing the technical vision that helped win a $70.7M contract. The CEO gave me an equity award, which felt surreal for someone who had been there less than a year.</p>
+                
+                <p>Here's what I've learned. Trust is earned through demonstrating judgment, not claiming authority. I don't make final decisions on vendor relationships or budget allocation, but when leadership asks for my technical assessment, they act on it. That matters more than any org chart title.</p>
+
+                <p>I'm PMP and CSM certified, comfortable coding in Python, C++, C#, and JavaScript, and I approach platform work with research discipline. Define success criteria, measure against gates, make go/no-go calls based on data. That combination of technical depth and program structure has let me deliver platforms 30% faster than previous attempts while working in regulated, safety-critical environments where "move fast and break things" isn't an option.</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">Feb 2024 – Present</div>
+                    <div class="timeline-role">Technical Program Manager</div>
+                    <div class="timeline-company">DCS Corporation</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">Mar 2023 – Jan 2024</div>
+                    <div class="timeline-role">Systems Engineer</div>
+                    <div class="timeline-company">DCS Corporation</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2021 – 2023</div>
+                    <div class="timeline-role">Postdoctoral Research Fellow</div>
+                    <div class="timeline-company">Washington University in St. Louis</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2015 – 2021</div>
+                    <div class="timeline-role">Graduate Researcher & Program Lead</div>
+                    <div class="timeline-company">University of Michigan</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="contact-content">
+            <h2>Let's Connect . . .</h2>
+            <p>Interested in discussing 0→1 platform opportunities, ML productization challenges, or cross-organizational program leadership? Let's connect.</p>
+
+            <div class="contact-links">
+                <a href="/cdn-cgi/l/email-protection#c9a5aebba8a7fefaf889aea4a8a0a5e7aaa6a4" class="contact-btn">Email Me</a>
+                <a href="https://www.linkedin.com/in/lgrant-phd" target="_blank" class="contact-btn secondary">LinkedIn</a>
+                <a href="Lauren_Grant_Resume.pdf" download class="contact-btn secondary">Download Resume</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Lauren Grant | Technical Program Manager | Detroit, MI</p>
+    </footer>
+
+    <!-- Modals for Platform Details -->
+    <!-- Modal 1: Real-Time Analytics Platform -->
+    <div class="modal" id="modal-analytics">
+        <div class="modal-close" onclick="closeModal('modal-analytics')">×</div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-tag">0→1 Platform Build | Feb 2024 – July 2024</div>
+                <h2 class="modal-title">Real-Time Multi-Modal Analytics Platform</h2>
+                <p class="modal-subtitle">Launched systems integration laboratory in 4 months after two prior failed attempts, then validated entire lab capability through week-long Data Validation Pilot with 20 participants—first comprehensive end-to-end test proving the laboratory was "all systems go" and establishing foundation for all future evaluation programs.</p>
+            </div>
+
+            <div class="modal-stats">
+                <div class="modal-stat">
+                    <div class="modal-stat-value">7</div>
+                    <div class="modal-stat-label">Concurrent Pipelines</div>
+                </div>
+                <div class="modal-stat">
+                    <div class="modal-stat-value">~40</div>
+                    <div class="modal-stat-label">Kafka Topics</div>
+                </div>
+                <div class="modal-stat">
+                    <div class="modal-stat-value">6</div>
+                    <div class="modal-stat-label">Stakeholder Groups</div>
+                </div>
+                <div class="modal-stat">
+                    <div class="modal-stat-value">3</div>
+                    <div class="modal-stat-label">Orgs Aligned</div>
+                </div>
+                <div class="modal-stat">
+                    <div class="modal-stat-value">20</div>
+                    <div class="modal-stat-label">Validation Event Participants</div>
+                </div>
+                <div class="modal-stat">
+                    <div class="modal-stat-value">&lt;30%</div>
+                    <div class="modal-stat-label">Max Data Loss</div>
+                </div>
+            </div>
+
+            <div class="modal-section">
+                <h3>The Challenge</h3>
+                <p>The program had tried twice to build a systems integration laboratory, and both attempts failed. When I joined in October 2023, I had four months to figure out what they couldn't—get the lab open by February 2024 or the entire evaluation program would remain blocked.</p>
+                <p>But here's the thing. "Opening" a lab doesn't mean it works. February came and the lab opened, but data lines were still being installed, the simulation cab was coming together, and nobody had actually tested whether all of this—the workload monitoring, the Unreal Engine environment, the multi-modal data streams, the live analytics—worked as a system. We had tested pieces, but we hadn't tested the whole.</p>
+                <p>So we created the Data Validation Pilot. One week, 20 participants, first real end-to-end test of everything. If it worked, we had a fully functional laboratory. If it didn't, we would be starting over. Beyond the technical validation, this was the first time personnel from data science, research, simulation, and software engineering were coming together as an actual team.</p>
+            </div>
+
+            <div class="modal-section">
+                <h3>My Role & Approach</h3>
+                <p>I was the single-threaded owner for the Data Validation Pilot—meaning if it went sideways, that was on me. I made the final go/no-go call to run the event, approved the datasets as ready for analysis, and presented results to leadership. If something failed its performance thresholds, I could block it from moving forward or send it back for rework.</p>
+                <p>The hardest part wasn't the technical work—it was coordination. Five internal teams, all with their own roadmaps: game development, software orchestration, data engineering, data analysis, human factors. Plus an external partner providing dashboard tooling. Getting everyone aligned on what "done" looked like took more time than building anything.</p>
+                <p>And then there was the GVSC situation. Three organizations—DCS (my company), Army Research Laboratories (ARL), and Ground Vehicle Systems Center (GVSC)—had different opinions on how simulation data should flow through the system. DCS and ARL needed it parsed into separate streams. GVSC's architecture sent it as one big chunk. After weeks of back-and-forth across leadership and engineering teams, I got GVSC to change their approach. That unblocked the Data Validation Pilot and became the standard data model all three organizations use now.</p>
+                <p>On the technical side, I defined what "good enough" meant: millisecond latency for physiological data (seconds would break our correlation analysis), perfect synchronization across all data streams (if physio data didn't line up with simulation events, the dashboard was useless), and less than 30% data loss (measured by comparing actual vs expected row counts). Those weren't arbitrary—they were the thresholds where the system stopped being useful.</p>
+                <p>I also spent a lot of time thinking about what could go wrong. Top three risks: simulation software crashing mid-event, data pipelines failing to log correctly, or time synchronization breaking across streams. Any of those would've invalidated the results. So we tested aggressively in two-week sprints and monitored everything live during the actual event.</p>
+                <p>During the week itself, I ran command and control—managing seven concurrent data pipelines across about 40 Kafka topics, watching for issues in real time, and making calls on the fly when things didn't go as planned.</p>
+            </div>
+
+            <div class="modal-section">
+                <h3>Technical Solution</h3>
+                <div class="modal-highlights">
+                    <div class="highlight-box">
+                        <h4>Multi-Modal Data Integration</h4>
+                        <p>Integrated Unreal Engine 5 simulation data (vehicle position/speed, obstacle hits, dynamics, threat drone trajectories) with physiological monitoring (cardiac metrics), eye-tracking, and user interface events (yoke button responses) into unified Kafka architecture. Enabled cohesive performance analysis across mobility, threat detection, and threat response metrics.</p>
+                    </div>
+                    <div class="highlight-box">
+                        <h4>Common Data Model Across 3 Orgs</h4>
+                        <p>Negotiated GVSC architectural change from single-stream to multi-topic Kafka parsing, establishing common data model mandated across DCS, ARL, and GVSC. Developed custom plugin to translate Unreal output for ARL dashboard integration, sparking wider cross-org conversation on unified data standards.</p>
+                    </div>
+                    <div class="highlight-box">
+                        <h4>Real-Time Performance Monitoring</h4>
+                        <p>Built live dashboard with millisecond-latency physiological data, synchronized performance metrics, and real-time event logging. Integrated ARL's mission planning tool for map-based vehicle/threat visualization with timeline playback, enabling both live monitoring and after-action review.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-section">
+                <h3>Results & Impact</h3>
+                <ul>
+                    <li>Successfully launched laboratory in February 2024 after two prior failed attempts (4-month delivery from project start), but launch was just the beginning—lab capability remained unproven until validation event</li>
+                    <li>Executed week-long Data Validation Pilot (July 2024) as first comprehensive end-to-end test of entire laboratory: Made final go/no-go call, ran live day-of execution coordinating newly-formed cross-functional team (data science, research, simulation, software engineering working together for first time), approved all datasets as analysis-ready</li>
+                    <li>Validation event success officially put the laboratory "on the map" as fully-functional: Demonstrated real-time multi-modal analytics (physiological monitoring, Unreal Engine 5 simulation, eye-tracking, UI events) working in concert with millisecond-latency synchronization—proving lab was truly "all systems go"</li>
+                    <li>Authored comprehensive 44-page laboratory overview post-validation: Documented mission statement, accomplished capabilities, complete software and data architecture, Unreal Engine plugins, and program structure—providing definitive snapshot of where program stood and establishing technical foundation for all future work</li>
+                    <li>Solidified new program structure across functional areas: Validation event execution week brought together personnel from data science, research, simulation, and software engineering as cohesive team for first time, establishing collaborative model still used today</li>
+                    <li>Platform supported first formal technology evaluation event (Dec 2024): "We were officially in business"—laboratory transitioned from experimental to operational evaluation facility</li>
+                    <li>Platform enabled 3 total evaluation events post-validation, supporting ~60 users; 4 teams now use platform for daily work (game dev, ML/analysis, data eng, human factors)</li>
+                    <li>Trained 2 engineers in advanced analytics capabilities: One data scientist (3-month intensive with daily meetings, now independent contributor making significant contributions) and one engineer in signal processing & data pipeline development</li>
+                    <li>Resolved critical 3-org architectural conflict: After weeks of negotiation, convinced GVSC to modify Kafka architecture to parse simulation data into separate topics, establishing common data model now mandated across DCS, ARL, and GVSC</li>
+                    <li>Primary technical author on winning $70.7M government contract (written January 2024 during laboratory launch): Advanced analytics components represented ~25% of proposal value (~$18M), earning equity incentive from CEO for technical vision that distinguished winning proposal</li>
+                    <li>Recognized for delivery impact: Promoted from Systems Engineer to Technical Program Manager (Feb 2024) after successfully launching laboratory that had failed twice, then proving capability through comprehensive validation event</li>
+                </ul>
+            </div>
+
+            <div class="modal-section">
+                <h3>Tech Stack</h3>
+                <div class="tech-stack">
+                    <span class="tech-tag">Apache Kafka (~40 Topics)</span>
+                    <span class="tech-tag">Unreal Engine 5</span>
+                    <span class="tech-tag">PostgreSQL</span>
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Ansible (Orchestration)</span>
+                    <span class="tech-tag">Real-Time Dashboards</span>
+                    <span class="tech-tag">Multi-Modal Data Sync</span>
+                    <span class="tech-tag">Distributed Systems</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2: ML Inference Platform -->
+    <div class="modal" id="modal-ml">
+        <div class="modal-close" onclick="closeModal('modal-ml')">×</div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-tag">ML Productization | Mar 2024 – Present</div>
+                <h2 class="modal-title">ML Inference & Tracking Platform</h2>
+                <p class="modal-subtitle">Scaled computer vision platform from failed prototype to production MVP, improving model accuracy from 30% to 75% and doubling throughput for real-time object detection across 18 camera streams.</p>
+            </div>
+
+            <div class="modal-stats">
+                <div class="modal-stat">
+                    <div class="modal-stat-value">18</div>
+                    <div class="modal-stat-label">Camera Streams (6× Scale)</div>
+                </div>
+                <div class="modal-stat">
+                    <div class="modal-stat-value">30-40 FPS</div>
+                    <div class="modal-stat-label">Processing Speed</div>
+                </div>
+                <div class="modal-stat">
+                    <div class="modal-stat-value">75%</div>
+                    <div class="modal-stat-label">Video Detection Accuracy</div>
+                </div>
+                <div class="modal-stat">
+                    <div class="modal-stat-value">2×</div>
+                    <div class="modal-stat-label">Throughput Increase</div>
+                </div>
+                <div class="modal-stat">
+                    <div class="modal-stat-value">50-70ms</div>
+                    <div class="modal-stat-label">Latency Ceiling</div>
+                </div>
+                <div class="modal-stat">
+                    <div class="modal-stat-value">13</div>
+                    <div class="modal-stat-label">Target Classes</div>
+                </div>
+            </div>
+
+            <div class="modal-section">
+                <h3>The Challenge</h3>
+                <p>We received a computer vision prototype from Army Research Laboratories that wasn't in great shape—outdated model, unmaintained code, documentation that didn't exist. We could have tried to salvage it, but it would have taken longer than starting fresh, so we built a real-time ML inference platform from scratch that could handle 18 concurrent camera streams at 30-40 FPS, keep latency under 70ms, and hit 75%+ accuracy across 13 different target types.</p>
+                <p>Here's where it got interesting. Six months into development, with RGB cameras fully optimized, the customer mentioned almost in passing, "Oh, and we'll need IR capability too. Soldiers will definitely use that." Infrared. Completely different data stream. Two months until our major evaluation event.</p>
+                <p>That one hurt, not because it was technically impossible—we could do it—but because it shouldn't have been a surprise. I should have asked better questions earlier. We delivered RGB + IR in that two-month window, but it taught me something I haven't forgotten. Proactive customer communication isn't optional. You have to check in constantly, surface assumptions early, and not wait for them to remember the critical requirement they forgot to mention.</p>
+            </div>
+
+            <div class="modal-section">
+                <h3>My Role & Approach</h3>
+                <p>I owned this platform end-to-end—model selection, architecture decisions, delivery schedule. If we missed performance targets or the timeline slipped, that was on me. After getting the project charter approved and assembling the cross-functional team, I ran it from initial prototype through production MVP and still own the roadmap today.</p>
+                <p>First decision was defining what actually constitutes "good enough" for this system. I defined hard gates at 30-40 FPS processing, sub-70ms latency, and 75%+ accuracy, and those weren't arbitrary. Early versions were detecting tree branches and shadows as drones constantly, which made soldiers want to turn the system off. If the false positive rate is high enough that users don't trust it, the accuracy number doesn't matter—it's unusable.</p>
+                <p>We evaluated YOLO model variants (small, medium, large) and selected medium for the best balance between speed and accuracy. The Army Research Laboratories prototype was rejected—it would have taken longer to fix than building from scratch.</p>
+                <p>Big architecture call was migrating from Python to C++, because Python wasn't going to meet real-time performance requirements. Then we hit GPU bottlenecks, so I pushed for a client-server refactor to split frame extraction from inference and distribute the load across dual RTX 4090 systems over 100 Gigabit Ethernet. That got us from 3 streams to 18 with about 2× the throughput.</p>
+                <p>The IR situation was a learning moment. Six months in, the customer mentioned needing infrared support with two months to delivery, so I reset expectations with leadership—this is happening, but here's what it costs—and we delivered. Both RGB and IR working in that window. The lesson stuck. I now implement continuous stakeholder alignment checkpoints, because waiting for requirements to surface late is a recipe for disaster.</p>
+            </div>
+
+            <div class="modal-section">
+                <h3>Technical Solution</h3>
+                <div class="modal-highlights">
+                    <div class="highlight-box">
+                        <h4>Client-Server Architecture Refactor</h4>
+                        <p>Replaced single-executable design (which overloaded GPU) with distributed client-server model: clients extract frames, servers perform inference across dual RTX 4090 GPUs per system via 100 Gigabit Ethernet. Enabled scale from 3 streams → 18 streams with ~2× throughput improvement.</p>
+                    </div>
+                    <div class="highlight-box">
+                        <h4>Multi-Camera Tracking Algorithm</h4>
+                        <p>Evolved from independent per-camera tracking (objects moving between cameras treated as new detections) to stitched ultrawide FOV approach, treating all detections as single panoramic image. Solved cross-camera object persistence problem.</p>
+                    </div>
+                    <div class="highlight-box">
+                        <h4>FP32→FP16 Model Optimization</h4>
+                        <p>Converted YOLO medium model computations from 32-bit to 16-bit floating point precision, significantly reducing memory footprint and bandwidth requirements without compromising accuracy. Critical for multi-stream GPU efficiency.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-section">
+                <h3>Results & Impact</h3>
+                <ul>
+                    <li>Successfully delivered MVP supporting 18 concurrent camera streams (6× scale from initial 3-stream prototype) at 30-40 FPS with 50-70ms latency</li>
+                    <li>Achieved ~2× throughput improvement through client-server refactor and FP32→FP16 optimization, enabling low-latency, high-volume data streaming across dual-GPU systems</li>
+                    <li>Improved video streaming accuracy from 30% (baseline) to 75%+ across 13 target classes—critical distinction from static image accuracy, demonstrating real-world operational viability</li>
+                    <li>Delivered RGB + IR capability in 2-month sprint after mid-project scope discovery, meeting hard deadline for major evaluation event despite 6 months of RGB-only development</li>
+                    <li>Platform now serves as core dependency for all third-party model evaluations and downstream software integration efforts with external partners</li>
+                    <li>Continue to own roadmap and scaling strategy: Currently leading A/B testing framework for evaluating ruggedized computer vision models from industry partners against baseline architecture</li>
+                    <li>Key learning: Proactive customer communication prevents scaling surprises—now implement continuous stakeholder alignment checkpoints across all platform programs</li>
+                </ul>
+            </div>
+
+            <div class="modal-section">
+                <h3>Tech Stack</h3>
+                <div class="tech-stack">
+                    <span class="tech-tag">C++</span>
+                    <span class="tech-tag">Client-Server Architecture</span>
+                    <span class="tech-tag">YOLO (Medium Model)</span>
+                    <span class="tech-tag">OpenCV</span>
+                    <span class="tech-tag">Dual RTX 4090 GPUs</span>
+                    <span class="tech-tag">100 Gigabit Ethernet</span>
+                    <span class="tech-tag">FP16 Optimization</span>
+                    <span class="tech-tag">Real-Time Inference</span>
+                    <span class="tech-tag">Multi-Stream Processing</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 3: Voice AI Assistant Platform -->
+    <div class="modal" id="modal-voice">
+        <div class="modal-close" onclick="closeModal('modal-voice')">×</div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-tag">AI Product | Jun 2024 – Present</div>
+                <h2 class="modal-title">Voice-Based AI Assistant Platform</h2>
+                <p class="modal-subtitle">Owned platform roadmap across transcription, command, and assistant phases, establishing <300ms latency and 75%+ accuracy delivery gates validated with 21 users.</p>
+            </div>
+
+            <div class="modal-stats">
+                <div class="modal-stat">
+                    <div class="modal-stat-value">&lt;300ms</div>
+                    <div class="modal-stat-label">Command Latency</div>
+                </div>
+                <div class="modal-stat">
+                    <div class="modal-stat-value">75%+</div>
+                    <div class="modal-stat-label">Speech Accuracy</div>
+                </div>
+                <div class="modal-stat">
+                    <div class="modal-stat-value">21</div>
+                    <div class="modal-stat-label">Users Validated</div>
+                </div>
+                <div class="modal-stat">
+                    <div class="modal-stat-value">4</div>
+                    <div class="modal-stat-label">Concurrent Audio Streams</div>
+                </div>
+                <div class="modal-stat">
+                    <div class="modal-stat-value">3</div>
+                    <div class="modal-stat-label">Platform Phases</div>
+                </div>
+            </div>
+
+            <div class="modal-section">
+                <h3>The Challenge</h3>
+                <p>Build a voice AI assistant for military vehicles that soldiers would actually trust. Not a demo, not a prototype—a production system with 99.99% uptime requirements and formal SLAs, because when you're operating hands-free across four concurrent radio channels in a safety-critical environment, "mostly working" isn't good enough.</p>
+                <p>The technical bar was high: sub-300ms command latency (anything over 500ms feels sluggish and breaks user trust), 75%+ accuracy for military-specific speech, handling four audio streams simultaneously. But honestly? The harder part was navigating a vendor relationship that went sideways.</p>
+                <p>We partnered with an industry contractor through Army Research Laboratories. Six months in, they delivered something we didn't ask for—a complete model plus architecture instead of just model integration, which is what we'd agreed on. Integrating their approach would've taken more time and introduced more risk than starting over. I had to make the call: walk away from six months of work with this partner. It wasn't easy. But here's what I learned: advanced technology doesn't kill projects. Poor communication has a 100% failure rate.</p>
+            </div>
+
+            <div class="modal-section">
+                <h3>My Role & Approach</h3>
+                <p>I owned this platform from concept through user acceptance testing—currently in Phase 5 of a 6-phase roadmap—with final call on roadmap sequencing, scope changes, and whether we move from one phase to the next. If quality thresholds weren't met, I could block deployment and send it back for rework, and if we blew the schedule or budget in a safety-critical system, that was on me.</p>
+                <p>First thing I did was define what "good enough" actually means: 75%+ accuracy (measured by word error rate and command execution), sub-300ms latency, and 99.99% uptime. Those became the gates between phases—you don't move forward unless you hit them.</p>
+                <p>I set up a 6-phase roadmap—transcription, then command execution, then full AI assistant—with formal milestones for leadership and 2-week sprints underneath for the team. Built the architecture to be modular so we could swap models in and out as better ones became available, because this needed to be a platform service that other systems depend on, not a standalone tool.</p>
+                <p>Then came the vendor decision. Six months into a partnership with an industry contractor, they delivered something that didn't match what we'd agreed on—we'd asked for model integration (just plug their model into our architecture), but they gave us model + architecture. Integrating it would've taken longer than rebuilding from scratch and introduced risks we didn't want, so I recommended terminating the contract. Leadership agreed, despite the sunk time and despite pressure from Army Research Laboratories to make it work.</p>
+                <p>That one taught me something: you can have great technology and still fail if communication breaks down. Now I frontload alignment conversations, define deliverables in detail, check in constantly, and surface mismatches early rather than six months in.</p>
+                <p>We validated the platform with 21 users over a week—3-hour sessions, 4 concurrent radio channels, real operational conditions—and it worked. Currently the platform is on a funded roadmap, mandated for reuse, and serving as the reference architecture for next-generation capabilities.</p>
+            </div>
+
+            <div class="modal-section">
+                <h3>Technical Solution</h3>
+                <div class="modal-highlights">
+                    <div class="highlight-box">
+                        <h4>System-of-Systems Architecture</h4>
+                        <p>Designed AI assistant as central hub of vehicle SoS architecture with all data flowing through it for vehicle subsystem functions. Platform treated as service with formal SLAs (99.99% uptime) that other systems depended on.</p>
+                    </div>
+                    <div class="highlight-box">
+                        <h4>Real-Time Multi-Stream Processing</h4>
+                        <p>Built speech-to-text pipeline processing 4 concurrent radio channels with 1-3 second transcription latency and <300ms command execution. Achieved 75%+ accuracy for military speech (Word Error Rate + command execution).</p>
+                    </div>
+                    <div class="highlight-box">
+                        <h4>Modular Architecture</h4>
+                        <p>Implemented modular architecture enabling model swapping and future upgrades. Evolved into multi-agentic workflow with each agent representing vehicle subsystem. Now serves as reference architecture for next-generation capabilities.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-section">
+                <h3>Results & Impact</h3>
+                <ul>
+                    <li>Successfully progressed platform through Phase 5 of 6 (User Acceptance Testing), achieving all formal SLA requirements with 21 users over week-long operational validation</li>
+                    <li>Met critical performance gates: <300ms command latency, 75%+ military speech accuracy (transcription + command execution), 99.99% uptime in safety-critical environment</li>
+                    <li>Made decisive vendor termination call that saved program integrity: After 6 months of development, terminated misaligned industry partner when delivered solution (model + architecture) didn't match requirements (model integration only), despite ARL pressure to continue</li>
+                    <li>Platform now on funded roadmap beyond initial project and mandated for reuse as reference architecture for next-generation AI assistant capabilities</li>
+                    <li>Currently working with industry partners to define expanded multi-agentic workflows, with architecture serving as baseline for future development efforts</li>
+                    <li>Established platform as mission-critical service at center of vehicle SoS architecture, with other subsystems depending on it for core functionality</li>
+                    <li>Key learning: Advanced technology doesn't kill projects, but poor communication has a 100% failure rate—applied this lesson to strengthen vendor alignment processes across all subsequent platforms</li>
+                </ul>
+            </div>
+
+            <div class="modal-section">
+                <h3>Tech Stack</h3>
+                <div class="tech-stack">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Speech-to-Text (Whisper)</span>
+                    <span class="tech-tag">NLP</span>
+                    <span class="tech-tag">Multi-Agent AI</span>
+                    <span class="tech-tag">System-of-Systems (SoS)</span>
+                    <span class="tech-tag">Modular Architecture</span>
+                    <span class="tech-tag">Real-Time Audio (4 Streams)</span>
+                    <span class="tech-tag">Mission-Critical Systems</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 4: Workload Analytics Platform -->
+    <div class="modal" id="modal-workload">
+        <div class="modal-close" onclick="closeModal('modal-workload')">×</div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-tag">Program Recovery & Platform Build | Jun 2023 – Present</div>
+                <h2 class="modal-title">Workload Analytics Platform</h2>
+                <p class="modal-subtitle">Diagnosed struggling workload program, recommended transitioning from external partners to internal capability, navigated vendor IP dispute with $1M demand, and led evaluation that resulted in strategic pivot from cardiac to neural-based measurement—transforming years of investment into operational capability with real-time workload analytics.</p>
+            </div>
+
+            <div class="modal-stats">
+                <div class="modal-stat">
+                    <div class="modal-stat-value">5 Years</div>
+                    <div class="modal-stat-label">External Contracts Ended</div>
+                </div>
+                <div class="modal-stat">
+                    <div class="modal-stat-value">$1M</div>
+                    <div class="modal-stat-label">Vendor Demand Rejected</div>
+                </div>
+                <div class="modal-stat">
+                    <div class="modal-stat-value">Cardiac→Neural</div>
+                    <div class="modal-stat-label">Strategic Pivot</div>
+                </div>
+                <div class="modal-stat">
+                    <div class="modal-stat-value">4</div>
+                    <div class="modal-stat-label">Research Partnerships</div>
+                </div>
+            </div>
+
+            <div class="modal-section">
+                <h3>The Challenge</h3>
+                <p>When I joined in March 2023, the workload measurement program was struggling. External partners had been working on this for 5 years, collecting cardiac data with commercial biometric devices, but no quantitative workload metrics were making it through to inform design decisions. The result was a significant investment with limited return: multiple evaluation cycles producing data that couldn't be analyzed effectively, hardware reliability issues preventing consistent collection, and no clear path to the objective performance metrics the program needed.</p>
+                <p>I was brought in to figure out what was going wrong. Within three months of joining—still fairly new to the organization—I dug into the code, talked to stakeholders across teams, and worked to understand the technical gaps. What I found was that the challenge wasn't just one thing: the analytical approaches being used weren't well-suited to time-series physiological data, and the commercial hardware had fundamental reliability issues with connectivity, event synchronization, and data quality that made downstream analysis nearly impossible.</p>
+            </div>
+
+            <div class="modal-section">
+                <h3>My Role & Approach</h3>
+                <p>I was brought in to diagnose what wasn't working and recommend a path forward. What made this challenging—and ultimately rewarding—was that leadership trusted my technical assessment even though I was relatively new to the organization. They didn't take these decisions lightly, but they valued my perspective as a subject matter expert and acted on my recommendations. That trust shaped how this work unfolded.</p>
+                
+                <p><strong>Recommendation 1: Transition to Internal Capability (June-October 2023)</strong></p>
+                <p>By June 2023, I'd identified that the external partnerships weren't working—not for lack of effort, but because the analytical requirements didn't align well with their expertise. I built cardiac preprocessing pipelines from scratch to demonstrate what internal capability could look like, then recommended transitioning those contracts and building expertise in-house instead. Leadership agreed. By October 2023, both partnerships had concluded, and I was asked to hire and train an internal data scientist to establish this as a permanent capability. This work, combined with my concurrent role in launching the systems integration laboratory, led to my promotion to Technical Program Manager in February 2024.</p>
+                
+                <p><strong>Recommendation 2: Walk Away from Vendor's $1M Demand (April-Mid 2024)</strong></p>
+                <p>We'd partnered with a vendor who provided a neural network model for converting raw ECG signals to workload scores. My team built the complete architecture around it—real-time processing, platform integration, the full stack. Then the vendor raised IP concerns and asked for $1M to continue. Meanwhile, the hardware side still wasn't reliable. I evaluated what we'd built, what alternatives existed, and whether the investment made sense. My recommendation: walk away. Leadership trusted that assessment, and we moved on.</p>
+                
+                <p><strong>Recommendation 3: Pivot to Neural-Based Measurement (Mid-Late 2024)</strong></p>
+                <p>With my neuroscience background, I was asked to evaluate an alternative approach using brain-computer interface technology. I met with the technology provider, reviewed their capabilities, and assessed how it would integrate with our existing architecture. The solution was compelling—it addressed the hardware reliability issues we'd been fighting and represented where the field was heading. I recommended pivoting the entire program from cardiac-based to neural-based measurement. Leadership approved. That decision aligned us with industry-leading technology and gave us the real-time, synchronized workload analysis capability we'd been working toward.</p>
+                
+                <p>What I contributed across this work:</p>
+                <ul>
+                    <li>Technical diagnosis through code review, stakeholder conversations, and hands-on analysis to understand root causes</li>
+                    <li>Built proof-of-concept preprocessing pipelines that demonstrated internal capability and informed strategic decisions</li>
+                    <li>Hired and trained internal data scientist, establishing the analytical expertise that replaced external dependencies</li>
+                    <li>Designed and built real-time processing architecture, including reverse-engineering existing models for platform compatibility</li>
+                    <li>Evaluated alternative technologies and assessed integration feasibility to inform strategic recommendations</li>
+                    <li>Provided technical guidance to leadership on vendor relationships and technology direction</li>
+                    <li>Led integration of new measurement approach into laboratory architecture for operational use</li>
+                </ul>
+            </div>
+
+            <div class="modal-section">
+                <h3>Technical Solution</h3>
+                <div class="modal-highlights">
+                    <div class="highlight-box">
+                        <h4>Custom Signal Processing</h4>
+                        <p>Developed ECG analysis and biosignal processing algorithms, replacing unreliable commercial solutions with production-ready custom implementations for real-time monitoring.</p>
+                    </div>
+                    <div class="highlight-box">
+                        <h4>Real-Time ML Pipeline</h4>
+                        <p>Built end-to-end pipeline from raw biosignals to real-time ML inference, enabling workload assessment and performance monitoring during operational scenarios.</p>
+                    </div>
+                    <div class="highlight-box">
+                        <h4>Production Architecture</h4>
+                        <p>Migrated platform from Python research code to C# production system, meeting real-time requirements while maintaining signal processing accuracy.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-section">
+                <h3>Results & Impact</h3>
+                <ul>
+                    <li><strong>Turned around a struggling program in months:</strong> Within three months of joining, identified what wasn't working and built proof-of-concept pipelines that demonstrated a path forward. My recommendations led to transitioning external partnerships and establishing internal capability by October 2023.</li>
+                    <li><strong>Built lasting analytical capability:</strong> Hired and trained an internal data scientist who's now a fully independent contributor. What started as a gap-filling hire became a permanent addition to the team's analytical expertise.</li>
+                    <li><strong>Navigated a complex vendor situation:</strong> When a vendor relationship became untenable financially, I evaluated our options and recommended walking away from a $1M demand. Leadership trusted that call, and we found a better path forward.</li>
+                    <li><strong>Led a strategic technology pivot:</strong> Used my neuroscience background to evaluate an alternative measurement approach. The recommendation to pivot from cardiac to neural-based monitoring was significant—it meant changing direction on years of work—but it solved our hardware problems and aligned us with where the field is heading.</li>
+                    <li><strong>Delivered operational capability from years of investment:</strong> The program now has real-time, time-synced workload analysis running in production. That capability has drawn interest from academic partners and industry, and it's become a foundation for how we evaluate new technologies.</li>
+                    <li><strong>Support four active research partnerships:</strong> I define technical scope and collaboration strategy for government-funded partnerships with academic and industry organizations. The platform we built has become the basis for cross-organization technology assessment.</li>
+                    <li><strong>Enabled new evaluation approaches:</strong> The workload platform opened doors to partnership opportunities we didn't have before—objective assessment of emerging technologies that need this kind of measurement capability.</li>
+                    <li><strong>Created technical de-risking path:</strong> Built the cardiac preprocessing pipeline as a fallback before committing to the neural pivot. That work proved our internal capability and gave leadership confidence in the recommendation.</li>
+                    <li><strong>Established repeatable methodology:</strong> Platform has supported four major evaluation events and become the foundation for physiological monitoring across programs. What was a capability gap is now a core strength.</li>
+                </ul>
+            </div>
+
+            <div class="modal-section">
+                <h3>Tech Stack</h3>
+                <div class="tech-stack">
+                    <span class="tech-tag">C#</span>
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Signal Processing</span>
+                    <span class="tech-tag">ECG Analysis</span>
+                    <span class="tech-tag">ML Inference</span>
+                    <span class="tech-tag">Real-Time Systems</span>
+                    <span class="tech-tag">Biosignal Processing</span>
+                    <span class="tech-tag">Workload Assessment</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2-4: ML, Voice, Workload (content truncated for brevity - full modals follow same pattern) -->
+    
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // Modal functionality
+        function openModal(modalId) {
+            console.log('Opening modal:', modalId);
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.add('active');
+                document.body.classList.add('modal-open');
+            }
+        }
+
+        function closeModal(modalId) {
+            console.log('Closing modal:', modalId);
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.remove('active');
+                document.body.classList.remove('modal-open');
+            }
+        }
+
+        // Initialize when DOM is ready
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM loaded, initializing event listeners');
+            
+            // Add click handlers to platform cards
+            const cards = document.querySelectorAll('.platform-card');
+            console.log('Found', cards.length, 'platform cards');
+            
+            cards.forEach((card) => {
+                const modalId = card.getAttribute('data-modal');
+                console.log('Setting up card with modal:', modalId);
+                
+                card.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    console.log('Card clicked, opening:', modalId);
+                    openModal(modalId);
+                });
+            });
+
+            // Close modal when clicking outside content
+            document.querySelectorAll('.modal').forEach(modal => {
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) {
+                        closeModal(modal.id);
+                    }
+                });
+            });
+
+            // Close modal with Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    document.querySelectorAll('.modal.active').forEach(modal => {
+                        closeModal(modal.id);
+                    });
+                }
+            });
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll reveal animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe platform cards
+        document.querySelectorAll('.platform-card').forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
